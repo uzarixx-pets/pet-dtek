@@ -1,0 +1,26 @@
+version: "3.8"
+
+services: 
+  postgres-dev:
+    image: "postgres:15.2-alpine"
+    environment:
+      POSTGRES_DB: ${PG_DATABASE_NAME}
+      POSTGRES_USER: ${PG_USER}
+      POSTGRES_PASSWORD: ${PG_PASSWORD}
+    ports:
+      - "5432:5432"      
+    volumes:
+      - "postgres-dev-data:/var/lib/postgresql/data"
+  pgadmin-dev:
+    image: dpage/pgadmin4
+    ports:
+      - "80:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PG_ADMIN_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PG_ADMIN_PASS}
+    volumes:
+      - pgadmin-dev-data:/var/lib/pgadmin-dev
+
+volumes: 
+  postgres-dev-data:
+  pgadmin-dev-data:
