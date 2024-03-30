@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "declaration": false,
+    "sourceMap": false,
+    "rootDir": ".",
+    "baseUrl": ".",
+    "paths": {
+      "@app/types": [
+        "types/"
+      ],
+      "@app/types/*": [
+        "types/*"
+      ],
+      "@app/entities": [
+        "src/entities"
+      ],
+      "@app/entities/*": [
+        "src/entities/*"
+      ]
+    }
+  },
+  "extends": "./tsconfig.json",
+  "exclude": [
+    "node_modules",
+    "test",
+    "dist",
+    "**/*spec.ts"
+  ],
+  "include": [
+    "migrations/**/*"
+  ]
+}

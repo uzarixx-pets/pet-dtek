@@ -1,0 +1,15 @@
+{"compilerOptions": {
+    "outDir": "./dist",
+    "declaration": false,
+    "sourceMap": false,
+    "rootDir": ".",
+    "baseUrl": ".",
+    "paths": {
+      "@app/types": ["types/"],
+      "@app/types/*": ["types/*"]
+    }
+  },
+  "extends": "./tsconfig.json",
+  "exclude": ["node_modules", "test", "dist", "**/*spec.ts"],
+  "include": ["entities/**/*", "types/**/*"]
+}
